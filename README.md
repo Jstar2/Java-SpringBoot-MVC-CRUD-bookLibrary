@@ -1,2 +1,3 @@
-# Java-SpringBoot-MVC-CRUD-bookLibrary
-Java, SpringBoot, MVC, CRUD, bookLibrary (back-end with simple front-end).
+# Java-SpringBoot-MVC-Thymeleaf fCRUD-bookLibrary
+
+Java, SpringBoot, MVC, CRUD, thymeleaf | bookLibrary (back-end with simple front-end).
