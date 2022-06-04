@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<style>
+table, th, td {
+	position: 7cm;
+	border: 3px solid white;
+	text-align: center;
+	font: bold;
+	font-size: 20px;
+	table-layout: auto;
+	background-color: black;
+	color: white;
+	width: auto;
+	height: auto;
+	border: 3px solid white;
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+	font: bold;
+	color: white;
+}
+
+body {
+	background-image: url("https://wallpaperaccess.com/full/5487854.jpg");
+	background-position: center;
+	background-size: cover;
+	background-size: 100%;
+}
+
+button {
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	background-color: blue;
+	border: 2px solid #4CAF50;
+}
+
+button:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Home</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK9VzJntTo4hjmf3fP7eO609I0fmSUIfl1EA&usqp=CAU" />
+</head>
+
+<body>
+	<h1>Online Library</h1>
+
+	<form method="get" action="/addBook">
+		<button type="submit">Add Book</button>
+	</form>
+
+	<form method="get" action="/updateBook">
+		<button type="submit"
+			style="position: absolute; top: 3.3cm; left: 4cm">Update Book</button>
+	</form>
+
+
+	<a style="color: white;">Total Books: <span style="color: white;"
+		th:text="${total}"></span></a>
+
+	<table style="width: 100%">
+		<thead>
+			<tr>
+				<th>Book ID</th>
+				<th>Book Name</th>
+				<th>Book Author</th>
+				<th>Availability</th>
+				<th>Delete Book</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${book}">
+				<td th:text="${book.bookId}">&nbsp;</td>
+				<td th:text="${book.name}">&nbsp;</td>
+				<td th:text="${book.author}">&nbsp;</td>
+				<td th:text="${book.avalability}">&nbsp;</td>
+				<td><a th:href="@{/delete/{id}(id=${book.bookId})}"
+					style="color: white; font-size-adjust: inherit;">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
